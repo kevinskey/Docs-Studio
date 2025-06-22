@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs Studio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #444;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            flex: 1;
+            padding: 1rem;
+            gap: 1rem;
+        }
+        textarea {
+            flex: 1;
+            min-height: 300px;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        #preview {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            overflow-y: auto;
+            min-height: 300px;
+            background-color: #f9f9f9;
+        }
+        footer {
+            text-align: center;
+            padding: 0.5rem;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Docs Studio</h1>
+    </header>
+    <main>
+        <textarea id="editor" placeholder="Type something..."></textarea>
+        <div id="preview">Start typing to see preview.</div>
+    </main>
+    <footer>
+        <small>Interactive Docs Studio Example</small>
+    </footer>
+    <script>
+        const editor = document.getElementById('editor');
+        const preview = document.getElementById('preview');
+
+        editor.addEventListener('input', () => {
+            preview.textContent = editor.value;
+        });
+    </script>
+</body>
+</html>
